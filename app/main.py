@@ -4,10 +4,13 @@ from app.routes import auth, clases, reservas, admin  # importa tus routers
 
 app = FastAPI()
 
-# CORS (ajusta orígenes permitidos según tu front)
+# CORS (ajustar orígenes permitidos para desarrollo y producción)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",                      # desarrollo local
+        "https://le-cabin-app.vercel.app",           # dominio de Vercel (ajústalo si es distinto)
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
