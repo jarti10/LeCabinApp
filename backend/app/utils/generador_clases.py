@@ -10,11 +10,11 @@ from datetime import datetime, timedelta
 # Partimos de backend/app/utils ⇒ dos niveles arriba está el root “backend”
 BACKEND_ROOT = Path(__file__).resolve().parents[2]
 os.chdir(BACKEND_ROOT)                # ⇒ cwd en backend
-sys.path.insert(0, str(BACKEND_ROOT)) # ⇒ para que “import app.*” funcione
+sys.path.insert(0, str(BACKEND_ROOT)) # ⇒ para que “import *” funcione
 
 # ─── 2. Importar SQLAlchemy, Base y modelos ──────────────────────────────────────
-from app.database import engine, SessionLocal, Base
-from app.models import Clase
+from database import engine, SessionLocal, Base
+from models import Clase
 
 # ─── 3. Crear tablas si no existen ───────────────────────────────────────────────
 Base.metadata.create_all(bind=engine)

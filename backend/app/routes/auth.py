@@ -2,16 +2,16 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from datetime import datetime
-from app.database import get_db
-from app.models import User, Consentimiento, PacienteInfo
-from app.schemas import UserCreate, Token, UserOut
-from app.utils.security import (
+from database import get_db
+from models import User, Consentimiento, PacienteInfo
+from schemas import UserCreate, Token, UserOut
+from utils.security import (
     get_password_hash,
     verify_password,
     create_access_token,
     get_current_user,
 )
-from app.utils.validators import validar_dni_nie
+from utils.validators import validar_dni_nie
 
 router = APIRouter()
 

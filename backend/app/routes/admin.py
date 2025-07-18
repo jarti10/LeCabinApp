@@ -4,8 +4,8 @@ from fastapi import APIRouter, HTTPException, Depends
 from typing import Any
 from sqlalchemy.orm import Session
 
-from app.database import get_db
-from app.utils.generador_clases_mensual import generar_clases_mes, cargar_festivos
+from database import get_db
+from utils.generador_clases_mensual import generar_clases_mes, cargar_festivos
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 

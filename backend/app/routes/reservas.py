@@ -2,10 +2,10 @@
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session, joinedload
-from app.database import get_db
-from app.models import Clase, ReservaClase, User
-from app.schemas import ReservaClaseCreate, ReservaClaseOut, Mensaje
-from app.utils.security import get_current_user
+from database import get_db
+from models import Clase, ReservaClase, User
+from schemas import ReservaClaseCreate, ReservaClaseOut, Mensaje
+from utils.security import get_current_user
 from datetime import datetime
 
 router = APIRouter()

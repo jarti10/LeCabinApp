@@ -14,9 +14,9 @@ os.chdir(BACKEND_ROOT)
 sys.path.insert(0, str(BACKEND_ROOT))
 
 # ─── 2. Importar SQLAlchemy, tablas y funciones ─────────────────────────────────
-from app.database import engine, SessionLocal, Base
-from app.models import Clase
-from app.utils.generador_clases import generar_clases_semana
+from database import engine, SessionLocal, Base
+from models import Clase
+from utils.generador_clases import generar_clases_semana
 
 # ─── 3. Crear tablas si no existen ───────────────────────────────────────────────
 Base.metadata.create_all(bind=engine)

@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import auth, clases, reservas, admin  # importa tus routers
+from routes import auth, clases, reservas, admin  # importa tus routers
 
 app = FastAPI()
 

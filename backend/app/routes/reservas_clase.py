@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
-from app.database import get_db
-from app.models import ReservaClase, Clase, User
-from app.schemas import ReservaClaseCreate, ReservaClaseOut
-from app.utils.security import get_current_user
-from app.utils.festivos import es_festivo
+from database import get_db
+from models import ReservaClase, Clase, User
+from schemas import ReservaClaseCreate, ReservaClaseOut
+from utils.security import get_current_user
+from utils.festivos import es_festivo
 
 router = APIRouter()
 
