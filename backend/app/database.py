@@ -8,7 +8,7 @@ SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
 Base = declarative_base()
 
 def create_db():
-    from app import models
+    from models import *
     Base.metadata.create_all(bind=engine)
 
 # ✅ Esta es la función que usan los routers para acceder a la DB
