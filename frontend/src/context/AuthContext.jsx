@@ -13,6 +13,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (!token) return;
+
     api
       .get("/auth/me", {
         headers: { Authorization: `Bearer ${token}` },
@@ -29,19 +30,19 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem("userName", nombre);
       })
       .catch(() => {
-        // token inválido
         logout();
       });
   }, [token]);
 
   const login = async (email, password) => {
     const res = await api.post("/auth/login", {
-      username: email,
+      username: email, // ✅ aquí es donde debe ir "username"
       password,
     });
+
     setToken(res.data.access_token);
     localStorage.setItem("token", res.data.access_token);
-    // el useEffect cargará el resto
+    // el useEffect se encargará de cargar el resto
   };
 
   const logout = () => {
